@@ -5,6 +5,7 @@
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
+
 (use-package lsp-mode
   :ensure t
   :hook (c++-mode . lsp))
@@ -35,6 +36,12 @@
       scroll-step 1
       scroll-conservatively 10000
       scroll-preserve-screen-position 1)
+
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (setq c-basic-offset 4
+                  tab-width 4
+                  indent-tabs-mode nil)))
 
 ;; Example configuration for Consult
 (use-package consult
@@ -192,14 +199,15 @@
      default))
  '(electric-pair-mode t)
  '(global-display-line-numbers-mode t)
- '(indent-tabs-mode nil)
  '(lsp-clients-clangd-args '("--header-insertion-decorators=0"))
+ '(make-backup-files nil)
  '(menu-bar-mode nil)
- '(package-selected-packages nil)
+ '(package-selected-packages
+   '(atom-one-dark-theme cmake-mode company consult flycheck lsp-ui magit
+                         orderless use-package vertico))
  '(recentf-mode t)
  '(scroll-bar-mode nil)
  '(tab-bar-mode t)
- '(tab-width 8)
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
