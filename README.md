@@ -24,6 +24,7 @@ Modern Emacs setup for C++ development with LSP support and enhanced navigation.
 - `M-g i` - Jump to symbol
 - `M-s l` - Search lines
 - `M-s r` - Ripgrep search
+- `M-up`/`M-down` - Move Up/Down the current line
 
 ## Installation
 
