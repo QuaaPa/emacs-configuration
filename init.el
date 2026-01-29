@@ -5,7 +5,6 @@
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
-
 (use-package lsp-mode
   :ensure t
   :hook (c++-mode . lsp))
@@ -42,6 +41,10 @@
             (setq c-basic-offset 4
                   tab-width 4
                   indent-tabs-mode nil)))
+
+(setq kill-buffer-query-functions
+      (remq 'process-kill-buffer-query-function
+            kill-buffer-query-functions))
 
 ;; Example configuration for Consult
 (use-package consult
@@ -187,12 +190,14 @@
   (completion-category-defaults nil)
   (completion-category-overrides '((file (styles partial-completion)))))
 
+(move-text-default-bindings)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(compilation-always-kill t)
  '(custom-enabled-themes '(atom-one-dark))
  '(custom-safe-themes
    '("75eef60308d7328ed14fa27002e85de255c2342e73275173a14ed3aa1643d545"
@@ -204,7 +209,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    '(atom-one-dark-theme cmake-mode company consult flycheck lsp-ui magit
-                         orderless use-package vertico))
+			 move-text orderless use-package vertico))
  '(recentf-mode t)
  '(scroll-bar-mode nil)
  '(tab-bar-mode t)
