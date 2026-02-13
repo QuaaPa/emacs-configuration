@@ -19,10 +19,6 @@
 ;; Window & Display Configuration
 ;; ============================================================================
 
-(add-to-list 'display-buffer-alist
-             '("\\*compilation\\*"
-               (display-buffer-pop-up-frame)))
-
 ;; Scrolling behavior
 (setq redisplay-dont-pause t
       scroll-margin 5
