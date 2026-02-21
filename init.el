@@ -207,6 +207,18 @@
             kill-buffer-query-functions))
 
 ;; ============================================================================
+;; ASF & Backup & Lockfiles Management
+;; ============================================================================
+
+(setq auto-save-file-name-transforms
+      '((".*" "~/.emacs-auto-saves/" t)))
+
+(setq backup-directory-alist
+      '(("." . "~/.emacs-backups/")))
+
+(setq create-lockfiles nil)
+
+;; ============================================================================
 ;; Custom Variables (auto-generated)
 ;; ============================================================================
 
