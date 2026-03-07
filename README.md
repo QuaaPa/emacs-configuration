@@ -29,8 +29,9 @@ Modern Emacs setup for C++ development with LSP support and enhanced navigation.
 ## Installation
 
 1. Copy to `~/.emacs.d/init.el`
-2. Start Emacs (packages auto-install)
-3. Install `clangd` for C++ LSP support
+2. Create directory: `~/.emacd-auto-saves`
+3. Start Emacs (packages auto-install)
+4. Install `clangd` for C++ LSP support
 
 ## Requirements
 
